@@ -9,9 +9,8 @@ export const App = () => {
   const [posts, setPosts] = useState(moviesFromServer);
 
   const handlePost = (movie: Movie) => {
-    setPosts(currentPost => [...currentPost, movie]
-    );
-  }
+    setPosts(currentPost => [...currentPost, movie]);
+  };
 
   return (
     <div className="page">
@@ -19,7 +18,7 @@ export const App = () => {
         <MoviesList movies={posts} />
       </div>
       <div className="sidebar">
-        <NewMovie onAdd={handlePost}/>
+        <NewMovie onAdd={handlePost} />
       </div>
     </div>
   );

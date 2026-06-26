@@ -17,7 +17,7 @@ export const NewMovie = ({onAdd}: Props) => {
   const [imdbUrl, setImdbUrl] = useState('');
   const [imdbId, setImdbId] = useState('');
 
-  const isFormValid = title && imgUrl && imdbId && imdbUrl;
+  const isFormValid = title.trim() && imgUrl.trim() && imdbId.trim() && imdbUrl.trim();
 
   const handleSubmit = (event: React.FormEvent) =>{
     event.preventDefault();
@@ -27,11 +27,11 @@ export const NewMovie = ({onAdd}: Props) => {
     }
 
     const newMovie = {
-      title: title,
-      description: description,
-      imgUrl: imgUrl,
-      imdbUrl: imdbUrl,
-      imdbId: imdbId,
+      title: title.trim(),
+      description: description.trim(),
+      imgUrl: imgUrl.trim(),
+      imdbUrl: imdbUrl.trim(),
+      imdbId: imdbId.trim(),
     } as Movie;
 
     onAdd(newMovie);
